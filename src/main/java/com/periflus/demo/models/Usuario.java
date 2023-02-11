@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "usuarios")
@@ -16,6 +13,7 @@ import javax.persistence.Table;
 public class Usuario {
     @Getter @Setter @Column(name="id")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Getter @Setter @Column(name="nombre")
     private String nombre;
