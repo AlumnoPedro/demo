@@ -12,9 +12,7 @@ function actualizarEmailDelUsuario(){
 async function cargarUsuarios(){
   const request = await fetch('api/usuarios', {
     method: 'GET',
-    headers: {
-        getHeaders()
-    }
+    headers: getHeaders()
   });
   const usuarios = await request.json();
 
@@ -30,7 +28,6 @@ async function cargarUsuarios(){
   }
   document.querySelector('#usuarios tbody').outerHTML = listadoHTML;
 }
-
 function getHeaders(){
     return {
       'Accept': 'application/json',
@@ -45,9 +42,7 @@ if(!confirm("Desea eliminar este usuario?")){
 }
   const request = await fetch('api/usuario/'+id, {
     method: 'DELETE',
-    headers: {
-        getHeaders()
-    }
+    headers: getHeaders()
   });
   location.reload();
 }
